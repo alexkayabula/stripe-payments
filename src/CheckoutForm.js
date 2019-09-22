@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import { notify } from 'react-notify-toast';
-import 'react-toastify/dist/ReactToastify.css';
 import './CheckoutForm.css'
 
 const createOptions = (fontSize, padding) => {
