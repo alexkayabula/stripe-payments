@@ -1,26 +1,28 @@
 import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
-import { toast } from 'react-toastify';
+import { notify } from 'react-notify-toast';
 import 'react-toastify/dist/ReactToastify.css';
+import './CheckoutForm.css'
 
-const createOptions = () => {
-    return {
-      style: {
-        base: {
-          fontSize: '16px',
-          color: '#424770',
-          fontFamily: 'Open Sans, sans-serif',
-          letterSpacing: '0.025em',
-          '::placeholder': {
-            color: '#aab7c4',
-          },
+const createOptions = (fontSize, padding) => {
+  return {
+    style: {
+      base: {
+        fontSize,
+        color: '#424770',
+        letterSpacing: '0.025em',
+        fontFamily: 'Source Code Pro, monospace',
+        '::placeholder': {
+          color: '#aab7c4',
         },
-        invalid: {
-          color: '#c23d4b',
-        },
-      }
-    }
+        padding,
+      },
+      invalid: {
+        color: '#9e2146',
+      },
+    },
   };
+};
 
 class CheckoutForm extends Component {
     constructor(props){
@@ -40,9 +42,9 @@ class CheckoutForm extends Component {
 
         if (response.ok){
             this.setState({complete: true});
-            alert("Transaction successful")
+            notify('Transaction successful', 'success', 5000)
         } else{
-            alert("The payment system seems to be having a problem. Please try again later")
+            notify('The payment system seems to be having a problem. Please try again later', 'error', 5000)
         }
     }
     
@@ -50,9 +52,9 @@ class CheckoutForm extends Component {
 
         return (
           <div className="checkout">
-             <p>Enter Card Details</p>
+             <h2>Enter Card Details</h2>
              <CardElement
-             {...createOptions()}
+             { ...createOptions()}
              />
              <button onClick={this.submit}>Purchase</button>
           </div>

@@ -7,7 +7,6 @@ class App extends Component {
     return(
       <StripeProvider apiKey="pk_test_SdxatsuAobKY8TfE9HRRyCvd00OKMsscey">
         <div className='example'>
-          <h1>Stripe</h1>
           <Elements>
             <CheckoutForm />
           </Elements>
