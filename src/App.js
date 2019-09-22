@@ -5,7 +5,7 @@ import CheckoutForm from './CheckoutForm';
 class App extends Component {
   render(){
     return(
-      <StripeProvider apiKey="pk_test_SdxatsuAobKY8TfE9HRRyCvd00OKMsscey">
+      <StripeProvider apiKey={process.env.STRIPE_PUBLISHABLE_KEY}>
         <div className='example'>
           <Elements>
             <CheckoutForm />
