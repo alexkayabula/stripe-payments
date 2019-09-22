@@ -41,14 +41,14 @@ class CheckoutForm extends Component {
 
         if (response.ok){
             this.setState({complete: true});
-            notify('Transaction successful', 'success', 5000)
+            notify.show('Transaction successful', 'success', 5000)
         } else{
-            notify('The payment system seems to be having a problem. Please try again later', 'error', 5000)
+            notify.show('The payment system seems to be having a problem. Please try again later', 'error', 5000)
         }
     }
     
     render() {
-
+        
         return (
           <div className="checkout">
              <h2>Enter Card Details</h2>
