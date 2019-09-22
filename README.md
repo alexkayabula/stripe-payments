@@ -9,11 +9,11 @@
 - Installation of node on your local machine
 
 #### How to test
-
 - Clone the repository; `https://github.com/alexkayabula/Stripe-Payments.git`
 - Install the project dependecies using; `npm install`
 - Start the server using; `node server.js`
 - Run the application using; `npm start`
+- Access the app on; `localhost:3000`
 
 
 
