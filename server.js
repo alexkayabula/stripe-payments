@@ -1,5 +1,5 @@
 const app = require("express")();
-const stripe = require("stripe")("sk_test_9vItP1qXjzB9qb3B0V3L52Al00jgCStV47")
+const stripe = require("stripe")("process.env.STRIPE_SUBSCRIPTION_KEY")
 
 app.use(require("body-parser").text());
 
